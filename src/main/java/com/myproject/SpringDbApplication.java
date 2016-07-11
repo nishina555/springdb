@@ -18,9 +18,11 @@ public class SpringDbApplication implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception{
-/*        Customer created = customerRepository.save(new Customer(null,"toshiharu", "nishina"));
-        System.out.println(created + " is created");*/
-        customerRepository.findAll()
+        Customer created = customerRepository.save(new Customer(null,"toshiharu", "nishina"));
+        System.out.println(created + " is created");
+/*        customerRepository.findAll()
+                .forEach(System.out::println);*/
+        customerRepository.findAllOrderByName()
                 .forEach(System.out::println);
     }
 
